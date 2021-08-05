@@ -41,7 +41,7 @@ def create_feed_checker(feed_url):
         entry = FEED.entries[0]
         if entry.id != db.get_link(feed_url).link:
                        # ↓ Edit this message as your needs.
-            message = f"/mirror@mirrorxinvinci_bot```{entry.link}``\n**{entry.title}** "
+            message = f"/mirror@Mirror_by_invinci_bot  ```{entry.link}``\n**{entry.title}** "
             try:
                 app.send_message(log_channel, message)
                 db.update_link(feed_url, entry.id)
