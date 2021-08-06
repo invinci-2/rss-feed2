@@ -74,7 +74,7 @@ app = Client(":memory:", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 def create_feed_checker(feed_url2):
     def check_feed():
-        FEED = feedparser.parse(feed_url2)
+        FEED2 = feedparser.parse(feed_url2)
         entry = FEED.entries[0]
         if entry.id != db.get_link(feed_url2).link:
                        # ↓ Edit this message as your needs.
