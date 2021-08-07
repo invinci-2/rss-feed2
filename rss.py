@@ -122,7 +122,7 @@ def create_feed_checker3(feed_url3):
             except Exception as e:
                 print(e)
         else:
-            print(f"Checked RSS FEED: {entry.id}")
+            print(f"Checked RSS FEED: {entry3.id}")
     return check_feed3
 
 
