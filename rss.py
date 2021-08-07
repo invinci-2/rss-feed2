@@ -18,8 +18,6 @@ try:
     api_hash = os.environ.get("API_HASH")   # Get it from my.telegram.org
     feed_urls = list(set(i for i in os.environ.get("FEED_URLS").split("|")))  # RSS Feed URL of the site.
     feed_urls2 = list(set(i for i in os.environ.get("FEED_URLS2").split("|")))
-    feed_urls3 = list(set(i for i in os.environ.get("FEED_URLS3").split("|")))
-    feed_urls4 = list(set(i for i in os.environ.get("FEED_URLS4").split("|")))
     bot_token = os.environ.get("BOT_TOKEN")   # Get it by creating a bot on https://t.me/botfather
     log_channel = int(os.environ.get("LOG_CHANNEL"))   # Telegram Channel ID where the bot is added and have write permission. You can use group ID too.
     check_interval = int(os.environ.get("INTERVAL", 10))   # Check Interval in seconds.  
@@ -44,7 +42,7 @@ def create_feed_checker(feed_url):
         entry = FEED.entries[0]
         if entry.id != db.get_link(feed_url).link:
                        # ↓ Edit this message as your needs.
-            message = f"/mirror@Mirror_by_invinci_bot ```{entry.link}``\n**{entry.title}** "
+            message = f"/mirror@Mirrorxinvincible3_bot ```{entry.link}``\n**{entry.title}** "
             try:
                 app.send_message(log_channel, message)
                 db.update_link(feed_url, entry.id)
@@ -78,7 +76,7 @@ def create_feed_checker2(feed_url2):
         entry2 = FEED2.entries[0]
         if entry2.id != db.get_link(feed_url2).link:
                        # ↓ Edit this message as your needs.
-            message = f"/mirror@Mirrorxinvincible3_bot ```{entry2.link}``\n**{entry2.title}** "
+            message = f"/mirror@Mirrorxinvinci_bot ```{entry2.link}``\n**{entry2.title}** "
             try:
                 app.send_message(log_channel, message)
                 db.update_link(feed_url2, entry2.id)
