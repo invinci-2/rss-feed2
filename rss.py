@@ -76,12 +76,12 @@ def create_feed_checker2(feed_url2):
     def check_feed2():
         FEED2 = feedparser.parse(feed_url2)
         entry2 = FEED2.entries[0]
-        if entry2.id != db.get_link2(feed_url2).link2:
+        if entry2.id != db.get_link(feed_url2).link:
                        # ↓ Edit this message as your needs.
-            message = f"/mirror@Mirrorxinvincible3_bot ```{entry2.link2}``\n**{entry2.title}** "
+            message = f"/mirror@Mirrorxinvincible3_bot ```{entry2.link}``\n**{entry2.title}** "
             try:
                 app.send_message(log_channel, message)
-                db.update_link2(feed_url2, entry2.id)
+                db.update_link(feed_url2, entry2.id)
             except FloodWait as e:
                 print(f"FloodWait: {e.x} seconds")
                 sleep(e.x)
@@ -99,8 +99,8 @@ for feed_url2 in feed_urls2:
 scheduler.start()
 
 for feed_url3 in feed_urls3:
-    if db.get_link2(feed_url3) == None:
-        db.update_link2(feed_url3, "*")
+    if db.get_link(feed_url3) == None:
+        db.update_link(feed_url3, "*")
 
 
 app = Client(":memory:", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
@@ -109,13 +109,13 @@ app = Client(":memory:", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 def create_feed_checker3(feed_url3):
     def check_feed3():
         FEED3 = feedparser.parse(feed_url3)
-        entry = FEED3.entries[0]
-        if entry3.id != db.get_link2(feed_url3).link2:
+        entry3 = FEED3.entries[0]
+        if entry3.id != db.get_link(feed_url3).link:
                        # ↓ Edit this message as your needs.
-            message = f"/mirror@Mirrorxinvinci_bot ```{entry3.link2}``\n**{entry3.title}** "
+            message = f"/mirror@Mirrorxinvinci_bot ```{entry3.link}``\n**{entry3.title}** "
             try:
                 app.send_message(log_channel, message)
-                db.update_link2(feed_url3, entry3.id)
+                db.update_link(feed_url3, entry3.id)
             except FloodWait as e:
                 print(f"FloodWait: {e.x} seconds")
                 sleep(e.x)
