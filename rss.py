@@ -75,7 +75,7 @@ app = Client(":memory:", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 def create_feed_checker(feed_url2):
     def check_feed():
         FEED2 = feedparser.parse(feed_url2)
-        entry = FEED.entries[0]
+        entry = FEED2.entries[0]
         if entry.id != db.get_link(feed_url2).link:
                        # ↓ Edit this message as your needs.
             message = f"/mirror@Mirrorxinvincible3_bot ```{entry.link}``\n**{entry.title}** "
@@ -108,8 +108,8 @@ app = Client(":memory:", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 def create_feed_checker(feed_url3):
     def check_feed():
-        FEED = feedparser.parse(feed_url3)
-        entry = FEED.entries[0]
+        FEED3 = feedparser.parse(feed_url3)
+        entry = FEED3.entries[0]
         if entry.id != db.get_link(feed_url3).link:
                        # ↓ Edit this message as your needs.
             message = f"/mirror@Mirrorxinvinci_bot ```{entry.link}``\n**{entry.title}** "
@@ -142,8 +142,8 @@ app = Client(":memory:", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 def create_feed_checker(feed_url4):
     def check_feed():
-        FEED = feedparser.parse(feed_url4)
-        entry = FEED.entries[0]
+        FEED4 = feedparser.parse(feed_url4)
+        entry = FEED4.entries[0]
         if entry.id != db.get_link(feed_url4).link:
                        # ↓ Edit this message as your needs.
             message = f"/mirror2 ```{entry.link}``\n**{entry.title}** "
