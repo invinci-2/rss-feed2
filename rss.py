@@ -72,8 +72,8 @@ for feed_url2 in feed_urls2:
 app = Client(":memory:", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 
-def create_feed_checker(feed_url2):
-    def check_feed():
+def create_feed_checker2(feed_url2):
+    def check_feed2():
         FEED2 = feedparser.parse(feed_url2)
         entry = FEED2.entries[0]
         if entry.id != db.get_link(feed_url2).link:
@@ -89,13 +89,13 @@ def create_feed_checker(feed_url2):
                 print(e)
         else:
             print(f"Checked RSS FEED: {entry.id}")
-    return check_feed
+    return check_feed2
 
 
 scheduler = BackgroundScheduler()
 for feed_url2 in feed_urls2:
-    feed_checker = create_feed_checker(feed_url2)
-    scheduler.add_job(feed_checker, "interval", seconds=check_interval, max_instances=max_instances)
+    feed_checker2 = create_feed_checker2(feed_url2)
+    scheduler.add_job(feed_checker2, "interval", seconds=check_interval, max_instances=max_instances)
 scheduler.start()
 
 for feed_url3 in feed_urls3:
@@ -106,8 +106,8 @@ for feed_url3 in feed_urls3:
 app = Client(":memory:", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 
-def create_feed_checker(feed_url3):
-    def check_feed():
+def create_feed_checker3(feed_url3):
+    def check_feed3():
         FEED3 = feedparser.parse(feed_url3)
         entry = FEED3.entries[0]
         if entry.id != db.get_link(feed_url3).link:
@@ -123,13 +123,13 @@ def create_feed_checker(feed_url3):
                 print(e)
         else:
             print(f"Checked RSS FEED: {entry.id}")
-    return check_feed
+    return check_feed3
 
 
 scheduler = BackgroundScheduler()
 for feed_url3 in feed_urls3:
-    feed_checker = create_feed_checker(feed_url3)
-    scheduler.add_job(feed_checker, "interval", seconds=check_interval, max_instances=max_instances)
+    feed_checker3 = create_feed_checker3(feed_url3)
+    scheduler.add_job(feed_checker3, "interval", seconds=check_interval, max_instances=max_instances)
 scheduler.start()
 
 for feed_url4 in feed_urls4:
@@ -140,8 +140,8 @@ for feed_url4 in feed_urls4:
 app = Client(":memory:", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 
-def create_feed_checker(feed_url4):
-    def check_feed():
+def create_feed_checker4(feed_url4):
+    def check_feed4():
         FEED4 = feedparser.parse(feed_url4)
         entry = FEED4.entries[0]
         if entry.id != db.get_link(feed_url4).link:
@@ -157,13 +157,13 @@ def create_feed_checker(feed_url4):
                 print(e)
         else:
             print(f"Checked RSS FEED: {entry.id}")
-    return check_feed
+    return check_feed4
 
 
 scheduler = BackgroundScheduler()
 for feed_url4 in feed_urls4:
-    feed_checker = create_feed_checker(feed_url4)
-    scheduler.add_job(feed_checker, "interval", seconds=check_interval, max_instances=max_instances)
+    feed_checker4 = create_feed_checker4(feed_url4)
+    scheduler.add_job(feed_checker4, "interval", seconds=check_interval, max_instances=max_instances)
 scheduler.start()
 
 app.run()
