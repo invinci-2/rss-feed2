@@ -78,7 +78,7 @@ def create_feed_checker4(feed_url4):
         if entry.id != db.get_link(feed_url4).link:
                        # ↓ Edit this message as your needs.
             if "yts.mx" in enid:
-                message = f"/mirror2 {entry.enclosure[1]['url']}"
+                message = f"/mirror2 {entry.links[1]['url']}"
             else:
                 message = f"/mirror2 ```{entry.link}``\n**{entry.title}** "
             try:
