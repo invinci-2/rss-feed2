@@ -79,7 +79,7 @@ def create_feed_checker4(feed_url4):
                        # ↓ Edit this message as your needs.
             if "yts.mx" in enid:
                 message = f"/mirror2 {entry.enclosure[1]['url']}"
-            else
+            else:
                 message = f"/mirror2 ```{entry.link}``\n**{entry.title}** "
             try:
                 app.send_message(log_channel, message)
