@@ -74,6 +74,7 @@ def create_feed_checker4(feed_url4):
     def check_feed4():
         FEED4 = feedparser.parse(feed_url4)
         entry = FEED4.entries[0]
+        enid = entry.id
         if entry.id != db.get_link(feed_url4).link:
                        # ↓ Edit this message as your needs.
             if "yts.mx" in enid:
