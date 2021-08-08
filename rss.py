@@ -76,7 +76,10 @@ def create_feed_checker4(feed_url4):
         entry = FEED4.entries[0]
         if entry.id != db.get_link(feed_url4).link:
                        # ↓ Edit this message as your needs.
-            message = f"/mirror2 ```{entry.link}``\n**{entry.title}** "
+            if "yts.mx" in enid:
+                message = f"/mirror2 {entry.enclosure[1]['url']}"
+            else
+                message = f"/mirror2 ```{entry.link}``\n**{entry.title}** "
             try:
                 app.send_message(log_channel, message)
                 db.update_link(feed_url4, entry.id)
